@@ -1,0 +1,179 @@
+/**
+Theme Name: Astra Child
+Author: Brainstorm Force
+Author URI: http://wpastra.com/about/
+Description: Astra is the fastest, fully customizable & beautiful theme suitable for blogs, personal portfolios and business websites. It is very lightweight (less than 50KB on frontend) and offers unparalleled speed. Built with SEO in mind, Astra comes with schema.org code integrated so search engines will love your site. Astra offers plenty of sidebar options and widget areas giving you a full control for customizations. Furthermore, we have included special features and templates so feel free to choose any of your favorite page builder plugin to create pages flexibly. Some of the other features: # WooCommerce Ready # Responsive # Compatible with major plugins # Translation Ready # Extendible with premium addons # Regularly updated # Designed, Developed, Maintained & Supported by Brainstorm Force. Looking for a perfect base theme? Look no further. Astra is fast, fully customizable and beautiful theme!
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: astra-child
+Template: astra
+*/
+
+/* # Layout */
+.bb-sidepanel {
+	display: none;
+}
+
+.site-content {
+	background-color:      #c4c4c4;
+	background-image:      url(https://staging1.benbakermembers.com/wp-content/uploads/2019/06/purty-wood.png);
+	background-repeat:     repeat;
+	background-attachment: fixed;
+}
+
+
+/* # Courses */
+.size-course-thumb,.sfwd-courses .post-thumb-img-content {
+	background-color: #ff8b00;
+}
+
+.ld-course-list-items .ld_course_grid .thumbnail.course {
+	border-radius: 0;
+}
+
+.ld-course-list-items .ld_course_grid .thumbnail .caption {
+	background-color: #f5f5f5;
+}
+
+.dd.course_progress {
+	background-color: #fff!important;
+}
+
+.ast-oembed-container {
+	border: 8px solid #2d2d2d;
+	background-color: #2d2d2d;
+}
+
+/* # Menu */
+.shiftnav.shiftnav-skin-standard-dark ul.shiftnav-menu li.menu-item.current-menu-item>.shiftnav-target {
+	background: #ff8b00 !important;
+}	
+
+/* # BuddyPress*/
+body.buddypress .site-content {
+	padding-top: 0;
+}   
+
+/* # Header */
+
+body {
+	margin-top: 75px;
+}
+
+.bb-header-bar-wrapper {
+	position:         fixed;
+	top:            0;
+	left:             0;
+	margin:           0 auto;
+	width:            100%;
+	background-color: #2d2d2d;
+	z-index:          100;
+	border-bottom:	  1px solid #2d2d2d;
+}
+
+.main-header-bar-wrap {
+	display: none;
+}
+
+
+.bb-desktop-header-bar {
+	display: none;
+}
+
+/* ## Mobile */
+.bb-mobile-header-bar {
+	display:         flex;
+	justify-content: space-between;
+}
+
+.bb-mobile-header-bar .bb-logo-wrapper {
+	padding:  10px;
+}
+
+.bb-mobile-header-bar .shiftnav-toggle-button:hover,
+.bb-mobile-header-bar .shiftnav-toggle-button {
+	padding:    15px 20px;
+	background: transparent;
+}
+
+.bb-mobile-header-bar .custom-logo {
+	max-height: 28px;
+	width:      auto;
+  	height:     auto;
+}
+
+/* ## Breadcrumbs */
+.bb-breadcrumbs-bar {
+	background-color: #ff8b00;
+	white-space: nowrap;
+	padding-left:  10px;
+	padding-right: 10px;
+	overflow-x: scroll;
+   	overflow-y: hidden;
+}
+
+
+/* Profile Menu */
+.shiftnav-profile .shiftnav-menu-image {
+	text-align: right;
+}
+
+.shiftnav-profile .shiftnav-panel-close {
+	right: initial !important;
+}
+
+.shiftnav .shiftnav-panel-close {
+	background: rgba(0,0,0,0) !important;
+}
+
+/* Dashbaord Menu */
+#menu-dashboard-menu,
+#menu-dashboard-menu .sub-menu {
+	list-style: none;
+	margin: 0;
+}
+#menu-dashboard-menu .menu-item a {
+	display: block;
+	color: #eee;
+	border-bottom: 1px solid #111;
+	border-top: 1px solid #313131;
+	text-shadow: 0 1px 1px rgba(0,0,0,.5);
+	padding: 15px;
+}
+
+@media screen and (min-width: 769px) {
+
+	/* # Header */
+	body {
+		margin-top:    110px;
+	}
+	
+	.bb-mobile-header-bar {
+		display: none;
+	}
+	
+	.bb-desktop-header-bar {
+		display:         flex;
+		justify-content: space-between;
+		padding-top:     16px;
+		padding-bottom:  16px;
+		padding-left:    35px;
+		padding-right:   35px;
+	}
+
+
+	/* Layout */
+	
+
+	.site-content {
+		float:       left;
+		width:       80%;
+		margin-left: 20%
+	}
+	
+	.site-footer {
+	display: none;
+		clear: both
+	}
+}
