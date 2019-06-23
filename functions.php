@@ -29,7 +29,31 @@ add_action( 'wp_enqueue_scripts', 'child_enqueue_styles', 15 );
  */
 function bb_register_my_menu() {
 
-    register_nav_menu( 'dashboard-menu',__( 'Dashboard Menu' ) );
+    register_nav_menu( 'sidepanel',__( 'Sidepanel' ) );
 
 }
 add_action( 'init', 'bb_register_my_menu' );
+
+/**
+ * Partial
+ */
+function bb_partial(
+    string $slug,
+    string $name = null
+) {
+    get_template_part(
+        'template-parts/' . $slug,
+        $name
+    );
+}
+
+/**
+ * Menu Sidepanel
+ */
+function bb_menu_sidepanel() {
+    wp_nav_menu(
+        array(
+            'theme_location' => 'sidepanel'
+        )
+    );
+}
