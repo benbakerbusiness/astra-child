@@ -27,18 +27,72 @@
 
     <?php astra_body_top(); ?>
     <div id="page" class="hfeed site">
-        <?php bb_partial( 'skip-nav' ); ?>
+        <a class="skip-link screen-reader-text" href="#content">
+            <?php echo esc_html( astra_default_strings( 'string-header-skip-link', false ) ); ?>
+        </a>
 
-        <div class="bb-header">
-            <?php bb_partial( 'header-desktop' ); ?>
+        <div id="header" class="bb-header">
+            <div class="bb-desktop-header-bar">
+                <?php astra_logo();?>
+                <?php wp_nav_menu(array('theme_location' => 'profile'));?>
+            </div>
 
-            <?php bb_partial( 'header-mobile' ); ?>
+            <div class="bb-mobile-header-bar">
 
-            <?php bb_partial( 'breadcrumbs' ); ?>
+                <div id="mySidenavLeft" class="sidenav sidenav-left">
+                    <a href="javascript:void(0)" class="closebtn closebtn-left" onclick="closeNavLeft()">
+                        &times;
+                    </a>
+                    <?php
+                        wp_nav_menu(
+                            array(
+                                'theme_location'  => 'sidepanel',
+                                'container_class' => 'menu-style-container'
+                            )
+                        );
+                    ?>
+                </div>
+                <span class="openbtn" onclick="openNavLeft()">
+                    &#9776;
+                </span>
+
+                <div class="bb-logo-wrapper">
+                    <?php astra_logo();?>
+                </div>
+
+                <div id="mySidenavRight" class="sidenav sidenav-right">
+                    <a href="javascript:void(0)" class="closebtn closebtn-right" onclick="closeNavRight()">
+                        &times;
+                    </a>
+                    <?php
+                        wp_nav_menu(
+                            array(
+                                'theme_location'  => 'profile',
+                                'container_class' => 'menu-style-container'
+                            )
+                        );
+                    ?>
+                </div>
+                <span class="openbtn" onclick="openNavRight()">
+                    &#9776;
+                </span>
+
+            </div><!-- /bb-mobile-header-bar -->
+
+            <div class="bb-breadcrumbs-bar">
+                <?php bb_breadcrumbs(); ?>
+            </div>
         </div>
 
-        <div class="bb-sidepanel">
-            <?php bb_partial( 'sidepanel' ); ?>
+        <div id="sidenav" class="bb-sidepanel">
+            <?php
+                wp_nav_menu(
+                    array(
+                        'theme_location'  => 'sidepanel',
+                        'container_class' => 'menu-style-container'
+                    )
+                );
+            ?>
         </div>
 
         <?php astra_content_before(); ?>
@@ -48,3 +102,25 @@
             <div class="ast-container">
 
                 <?php astra_content_top(); ?>
+
+                <!-- - -->
+                 <script>
+                    function openNavLeft() {
+                        closeNavRight();
+                        document.getElementById('mySidenavLeft').style.width = "250px";
+                    }
+
+                    function closeNavLeft() {
+                        document.getElementById('mySidenavLeft').style.width = "0";
+                    }
+
+                    function openNavRight() {
+                        closeNavLeft();
+                        document.getElementById('mySidenavRight').style.width = "250px";
+                    }
+
+                    function closeNavRight() {
+                        document.getElementById('mySidenavRight').style.width = "0";
+                    }
+                </script>
+                <!-- - -->

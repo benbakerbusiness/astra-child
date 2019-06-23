@@ -10,20 +10,40 @@ Text Domain: astra-child
 Template: astra
 */
 
-/* # Layout */
-.bb-sidepanel {
-	display: none;
+/* ========================================================================== */
+/* THIRD PARTY																  */
+/* ========================================================================== */
+
+/* -------------------------------------------------------------------------- */
+
+/* Astra */
+
+.ast-oembed-container {
+	border:           8px solid #2d2d2d;
+	background-color: #2d2d2d;
 }
 
-.site-content {
-	background-color:      #c4c4c4;
-	background-image:      url(https://staging1.benbakermembers.com/wp-content/uploads/2019/06/purty-wood.png);
-	background-repeat:     repeat;
-	background-attachment: fixed;
+.ast-footer-overlay {
+	padding: 10px;
 }
 
+.footer-sml-layout-1 .ast-small-footer-section-2 {
+	margin-top: 0;
+	font-size: 12px;
+}
 
-/* # Courses */
+/* -------------------------------------------------------------------------- */
+
+/* BuddyPress */
+
+body.buddypress .site-content {
+	padding-top: 0;
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* LearnDash */
+
 .size-course-thumb,.sfwd-courses .post-thumb-img-content {
 	background-color: #ff8b00;
 }
@@ -40,30 +60,68 @@ Template: astra
 	background-color: #fff!important;
 }
 
-.ast-oembed-container {
-	border: 8px solid #2d2d2d;
-	background-color: #2d2d2d;
+/* -------------------------------------------------------------------------- */
+
+/* ShiftNav */
+
+.shiftnav-profile .shiftnav-menu-image {
+	text-align: right;
 }
 
-/* # Menu */
+.shiftnav-profile .shiftnav-panel-close {
+	right: initial !important;
+}
+
+.shiftnav .shiftnav-panel-close {
+	background: rgba(0,0,0,0) !important;
+}
+
 .shiftnav.shiftnav-skin-standard-dark ul.shiftnav-menu li.menu-item.current-menu-item>.shiftnav-target {
 	background: #ff8b00 !important;
 }
 
-/* # BuddyPress*/
-body.buddypress .site-content {
-	padding-top: 0;
+/* ========================================================================== */
+/* THEME																      */
+/* ========================================================================== */
+
+/* -------------------------------------------------------------------------- */
+
+/* Body */
+
+body {
+	background-color: #2b2b2b;
 }
 
-/* # Header */
+/* -------------------------------------------------------------------------- */
+
+/* Breadcrumbs */
+
+.bb-breadcrumbs-bar {
+	background-color: #ff8b00;
+	white-space:      nowrap;
+	padding-left:     10px;
+	padding-right:    10px;
+	overflow-x:       scroll;
+	overflow-y:       hidden;
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* Header */
 
 body {
 	margin-top: 75px;
 }
 
+@media screen and (min-width: 769px) {
+	body {
+		margin-top:    111px;
+	}
+}
+
 .bb-header {
 	position:         fixed;
-	top:            0;
+	top:              0;
 	left:             0;
 	margin:           0 auto;
 	width:            100%;
@@ -72,16 +130,10 @@ body {
 	border-bottom:	  1px solid #2d2d2d;
 }
 
-.main-header-bar-wrap {
-	display: none;
-}
+/* -------------------------------------------------------------------------- */
 
+/* Header Mobile */
 
-.bb-desktop-header-bar {
-	display: none;
-}
-
-/* ## Mobile */
 .bb-mobile-header-bar {
 	display:         flex;
 	justify-content: space-between;
@@ -103,56 +155,21 @@ body {
 	height:     auto;
 }
 
-/* ## Breadcrumbs */
-.bb-breadcrumbs-bar {
-	background-color: #ff8b00;
-	white-space: nowrap;
-	padding-left:  10px;
-	padding-right: 10px;
-	overflow-x: scroll;
-	overflow-y: hidden;
-}
-
-
-/* Profile Menu */
-.shiftnav-profile .shiftnav-menu-image {
-	text-align: right;
-}
-
-.shiftnav-profile .shiftnav-panel-close {
-	right: initial !important;
-}
-
-.shiftnav .shiftnav-panel-close {
-	background: rgba(0,0,0,0) !important;
-}
-
-/* Dashbaord Menu */
-#menu-dashboard-menu,
-#menu-dashboard-menu .sub-menu {
-	list-style: none;
-	margin: 0;
-}
-#menu-dashboard-menu .menu-item a {
-	display: block;
-	color: #eee;
-	border-bottom: 1px solid #111;
-	border-top: 1px solid #313131;
-	text-shadow: 0 1px 1px rgba(0,0,0,.5);
-	padding: 15px;
-}
-
 @media screen and (min-width: 769px) {
-
-	/* # Header */
-	body {
-		margin-top:    110px;
-	}
-
 	.bb-mobile-header-bar {
 		display: none;
 	}
+}
 
+/* -------------------------------------------------------------------------- */
+
+/* Header Desktop */
+
+.bb-desktop-header-bar {
+	display: none;
+}
+
+@media screen and (min-width: 769px) {
 	.bb-desktop-header-bar {
 		display:         flex;
 		justify-content: space-between;
@@ -161,19 +178,232 @@ body {
 		padding-left:    35px;
 		padding-right:   35px;
 	}
+}
 
+/* -------------------------------------------------------------------------- */
 
-	/* Layout */
+/* Content */
 
+.site-content {
+	background-color:      #c4c4c4;
+	background-image:      url(https://staging1.benbakermembers.com/wp-content/uploads/2019/06/purty-wood.png);
+	background-repeat:     repeat;
+	background-attachment: fixed;
+}
 
+.widget-area {
+	padding-bottom: 0px !important;
+}
+
+@media screen and (min-width: 769px) {
 	.site-content {
-		float:       left;
 		width:       80%;
-		margin-left: 20%
+		margin-left: 20%;
 	}
 
-	.site-footer {
-		display: none;
-		clear: both
+	.widget-area,
+	.content-area {
+		margin-top:   30px !important;
+		margin-bottom: 30px !important;
 	}
 }
+
+/* -------------------------------------------------------------------------- */
+
+/* Footer */
+
+@media screen and (min-width: 769px) {
+	.site-footer {
+		width:       80%;
+		margin-left: 20%;
+	}
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* Sidepanel */
+
+.bb-sidepanel {
+	display: none;
+}
+
+@media screen and (min-width: 769px) {
+	.bb-sidepanel {
+		display: block;
+
+		position:   fixed;
+		overflow-y: scroll;
+		top:        112px;
+		bottom:     0;
+
+		width:      20%;
+
+		padding-bottom: 76px;
+
+		/*background-color: #2d2d2d;*/
+	}
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* Sidepanel Menu */
+
+.menu-style-container .menu,
+.menu-style-container .sub-menu {
+	list-style: none;
+	margin:     0;
+}
+
+.menu-style-container a {
+	display:       block;
+	color:         #eee;
+	border-bottom: 1px solid #111;
+	border-top:    1px solid #313131;
+	text-shadow:   0 1px 1px rgba(0,0,0,.5);
+	padding:       15px;
+	background:    #1D1D20;
+}
+
+.menu-style-container a:hover {
+	color: #f1f1f1;
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* Sidenav */
+
+/* @link https://www.w3schools.com/howto/howto_js_sidenav.asp */
+
+/* The side navigation menu */
+.sidenav {
+	height:           100%; /* 100% Full-height */
+	width:            0; /* 0 width - change this with JavaScript */
+	position:         fixed; /* Stay in place */
+	z-index:          100; /* Stay on top */
+	top:              0; /* Stay at the top */
+	background-color: #111; /* Black*/
+	overflow-x:       hidden; /* Disable horizontal scroll */
+	padding-top:      60px; /* Place content 60px from the top */
+	transition:       0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+.sidenav-left {
+	left: 0;
+}
+
+.sidenav-right {
+	right: 0;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+	position:    absolute;
+	top:         0;
+	font-size:   36px;
+	padding:     0 12px;
+	line-height: 1;
+}
+
+.sidenav .closebtn-left {
+	right: 0;
+}
+
+.sidenav .closebtn-right {
+	left: 0;
+}
+
+.openbtn {
+	color:       #fff;
+	padding:     15px 20px;
+	line-height: 1;
+	cursor:      pointer;
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* Dropdown */
+/* @link https://www.w3schools.com/howto/howto_css_dropdown.asp
+
+/* Style The Dropdown Button */
+#menu-profile > .menu-item-has-children > a {
+	/*	background-color: #4CAF50;*/
+	color:            white;
+	padding:          16px;
+	font-size:        16px;
+	border:           none;
+	cursor:           pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.menu-profile-container {
+	position: relative;
+	display: inline-block;
+
+	align-self: center!important;
+}
+
+.menu-profile-container ul {
+	margin: 0;
+	list-style: none;
+}
+
+/* Dropdown Content (Hidden by Default) */
+#menu-profile .sub-menu {
+	display:          none;
+	position:         absolute;
+	background-color: #f9f9f9;
+	min-width:        160px;
+	box-shadow:       0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index:          1;
+
+	right: 0;
+}
+
+/* Links inside the dropdown */
+#menu-profile .sub-menu a {
+	color:           black;
+	padding:         12px   16px;
+	text-decoration: none;
+	display:         block;
+}
+
+/* Change color of dropdown links on hover */
+#menu-profile .sub-menu a:hover {
+	background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu on hover */
+.menu-profile-container:hover #menu-profile .sub-menu {
+	display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.menu-profile-container:hover #menu-profile > .menu-item-has-children > a {
+	/*	background-color: #3e8e41;*/
+}
+
+/* -------------------------------------------------------------------------- */
+
+.bb-menu-avatar {
+	display: none;
+}
+
+@media screen and (min-width: 769px) {
+	.bb-menu-avatar {
+		display: inline-block;
+
+		margin-left: 10px;
+		border-radius: 50%;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
