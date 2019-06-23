@@ -85,6 +85,9 @@ function bb_breadcrumbs()
 	}
 }
 
+/**
+ * #user_email#
+ */
 add_filter('wp_nav_menu_objects', 'my_dynamic_menu_items');
 
 function my_dynamic_menu_items($menu_items)
