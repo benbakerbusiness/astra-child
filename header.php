@@ -44,12 +44,16 @@
                         &times;
                     </a>
                     <?php
-                        wp_nav_menu(
-                            array(
-                                'theme_location'  => 'sidepanel',
-                                'container_class' => 'menu-style-container'
-                            )
-                        );
+                        if ( has_nav_menu( 'sidepanel' ) ) {
+                            if ( has_nav_menu( 'sidepanel' ) ) {
+                                wp_nav_menu(
+                                    array(
+                                        'theme_location'  => 'sidepanel',
+                                        'container_class' => 'menu-style-container'
+                                    )
+                                );
+                            }
+                        }
                     ?>
                 </div>
                 <span class="openbtn" onclick="openNavLeft()">
@@ -65,12 +69,14 @@
                         &times;
                     </a>
                     <?php
-                        wp_nav_menu(
-                            array(
-                                'theme_location'  => 'profile',
-                                'container_class' => 'menu-style-container'
-                            )
-                        );
+                        if ( has_nav_menu( 'profile' ) ) {
+                            wp_nav_menu(
+                                array(
+                                    'theme_location'  => 'profile',
+                                    'container_class' => 'menu-style-container'
+                                )
+                            );
+                        }
                     ?>
                 </div>
                 <span class="openbtn" onclick="openNavRight()">
@@ -86,12 +92,14 @@
 
         <div id="sidenav" class="bb-sidepanel">
             <?php
-                wp_nav_menu(
-                    array(
-                        'theme_location'  => 'sidepanel',
-                        'container_class' => 'menu-style-container'
-                    )
-                );
+                if ( has_nav_menu( 'sidepanel' ) ) {
+                    wp_nav_menu(
+                        array(
+                            'theme_location'  => 'sidepanel',
+                            'container_class' => 'menu-style-container'
+                        )
+                    );
+                }
             ?>
         </div>
 
