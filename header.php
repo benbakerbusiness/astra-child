@@ -38,48 +38,47 @@
             </div>
 
             <div class="bb-mobile-header-bar">
-
-                <div id="mySidenavLeft" class="sidenav sidenav-left">
-                    <a href="javascript:void(0)" class="closebtn closebtn-left" onclick="closeNavLeft()">
-                        &times;
-                    </a>
-                    <?php
-                        if ( has_nav_menu( 'sidepanel' ) ) {
+                <?php if ( has_nav_menu( 'sidepanel' ) ) : ?>
+                    <div id="mySidenavLeft" class="sidenav sidenav-left">
+                        <a href="javascript:void(0)" class="closebtn closebtn-left" onclick="closeNavLeft()">
+                            &times;
+                        </a>
+                        <?php
                             wp_nav_menu(
                                 array(
                                     'theme_location'  => 'sidepanel',
                                     'container_class' => 'menu-style-container'
                                 )
                             );
-                        }
-                    ?>
-                </div>
-                <span class="openbtn" onclick="openNavLeft()">
-                    &#9776;
-                </span>
+                        ?>
+                    </div>
+                    <span class="openbtn" onclick="openNavLeft()">
+                        &#9776;
+                    </span>
+                <?php endif; ?>
 
                 <div class="bb-logo-wrapper">
                     <?php astra_logo();?>
                 </div>
 
-                <div id="mySidenavRight" class="sidenav sidenav-right">
-                    <a href="javascript:void(0)" class="closebtn closebtn-right" onclick="closeNavRight()">
-                        &times;
-                    </a>
-                    <?php
-                        if ( has_nav_menu( 'profile' ) ) {
+                <?php if ( has_nav_menu( 'profile' ) ) : ?>
+                    <div id="mySidenavRight" class="sidenav sidenav-right">
+                        <a href="javascript:void(0)" class="closebtn closebtn-right" onclick="closeNavRight()">
+                            &times;
+                        </a>
+                        <?php
                             wp_nav_menu(
                                 array(
                                     'theme_location'  => 'profile',
                                     'container_class' => 'menu-style-container'
                                 )
                             );
-                        }
-                    ?>
-                </div>
-                <span class="openbtn" onclick="openNavRight()">
-                    &#9776;
-                </span>
+                        ?>
+                    </div>
+                    <span class="openbtn" onclick="openNavRight()">
+                        &#9776;
+                    </span>
+                <?php endif; ?>
 
             </div><!-- /bb-mobile-header-bar -->
 
