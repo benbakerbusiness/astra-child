@@ -75,14 +75,17 @@ function bb_menu_primary()
  */
 function bb_breadcrumbs()
 {
-	if (is_front_page())
-	{
-		echo 'Home';
-	}
-	else
-	{
-		echo do_shortcode('[uo_breadcrumbs]');
-	}
+    if(is_user_logged_in())
+    {
+    	if (is_front_page())
+    	{
+    		echo 'Home';
+    	}
+    	else
+    	{
+    		echo do_shortcode('[uo_breadcrumbs]');
+    	}
+    }
 }
 
 /**

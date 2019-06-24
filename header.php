@@ -34,10 +34,13 @@
         <div id="header" class="bb-header">
             <div class="bb-desktop-header-bar">
                 <?php astra_logo();?>
-                <?php wp_nav_menu(array('theme_location' => 'profile'));?>
+                <?php if ( has_nav_menu( 'profile' ) ) : ?>
+                    <?php wp_nav_menu(array('theme_location' => 'profile'));?>
+                <?php endif; ?>
             </div>
 
             <div class="bb-mobile-header-bar">
+
                 <?php if ( has_nav_menu( 'sidepanel' ) ) : ?>
                     <div id="mySidenavLeft" class="sidenav sidenav-left">
                         <a href="javascript:void(0)" class="closebtn closebtn-left" onclick="closeNavLeft()">
@@ -55,6 +58,8 @@
                     <span class="openbtn" onclick="openNavLeft()">
                         &#9776;
                     </span>
+                <?php else: ?>
+                    <span></span>
                 <?php endif; ?>
 
                 <div class="bb-logo-wrapper">
@@ -78,6 +83,8 @@
                     <span class="openbtn" onclick="openNavRight()">
                         &#9776;
                     </span>
+                <?php else: ?>
+                    <span></span>
                 <?php endif; ?>
 
             </div><!-- /bb-mobile-header-bar -->
