@@ -45,14 +45,12 @@
                     </a>
                     <?php
                         if ( has_nav_menu( 'sidepanel' ) ) {
-                            if ( has_nav_menu( 'sidepanel' ) ) {
-                                wp_nav_menu(
-                                    array(
-                                        'theme_location'  => 'sidepanel',
-                                        'container_class' => 'menu-style-container'
-                                    )
-                                );
-                            }
+                            wp_nav_menu(
+                                array(
+                                    'theme_location'  => 'sidepanel',
+                                    'container_class' => 'menu-style-container'
+                                )
+                            );
                         }
                     ?>
                 </div>
