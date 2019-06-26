@@ -60,26 +60,6 @@ body.buddypress .site-content {
 	background-color: #fff!important;
 }
 
-/* -------------------------------------------------------------------------- */
-
-/* ShiftNav */
-
-.shiftnav-profile .shiftnav-menu-image {
-	text-align: right;
-}
-
-.shiftnav-profile .shiftnav-panel-close {
-	right: initial !important;
-}
-
-.shiftnav .shiftnav-panel-close {
-	background: rgba(0,0,0,0) !important;
-}
-
-.shiftnav.shiftnav-skin-standard-dark ul.shiftnav-menu li.menu-item.current-menu-item>.shiftnav-target {
-	background: #ff8b00 !important;
-}
-
 /* ========================================================================== */
 /* THEME																      */
 /* ========================================================================== */
@@ -94,9 +74,82 @@ body {
 
 /* -------------------------------------------------------------------------- */
 
+/* Header -  */
+
+body {
+	margin-top: 75px;
+}
+
+@media screen and (min-width: 769px) {
+	body {
+		margin-top:    119px;
+	}
+}
+
+.bb-header {
+	position: fixed;
+	top:      0;
+	width:    100%;
+	z-index:  100;
+
+	border-bottom:	  1px solid #2d2d2d;
+}
+
+/* -------------------------------------------------------------------------- */
+
+.bb-topbar {
+	background-color: #2d2d2d;
+	padding:          10px 15px;
+}
+
+@media screen and (min-width: 769px) {
+	.bb-topbar {
+		padding:    20px 35px;
+	}
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* Header Mobile */
+
+.bb-topbar-mobile {
+	display:         flex;
+	justify-content: space-between;
+	align-items:     center;
+}
+
+.bb-topbar-mobile .custom-logo {
+	max-height: 28px;
+	width:      auto;
+	height:     auto;
+}
+
+@media screen and (min-width: 769px) {
+	.bb-topbar-mobile {
+		display: none;
+	}
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* Header Desktop */
+
+.bb-topbar-desktop {
+	display: none;
+}
+
+@media screen and (min-width: 769px) {
+	.bb-topbar-desktop {
+		display:         flex;
+		justify-content: space-between;
+	}
+}
+
+/* -------------------------------------------------------------------------- */
+
 /* Breadcrumbs */
 
-.bb-breadcrumbs-bar {
+.bb-topbar-breadcrumbs {
 	background-color: #ff8b00;
 	white-space:      nowrap;
 	padding-left:     10px;
@@ -107,103 +160,32 @@ body {
 
 /* -------------------------------------------------------------------------- */
 
-/* Header */
-
-body {
-	margin-top: 75px;
-}
-
-@media screen and (min-width: 769px) {
-	body {
-		margin-top:    111px;
-	}
-}
-
-.bb-header {
-	position:         fixed;
-	top:              0;
-	left:             0;
-	margin:           0 auto;
-	width:            100%;
-	background-color: #2d2d2d;
-	z-index:          100;
-	border-bottom:	  1px solid #2d2d2d;
-}
-
-/* -------------------------------------------------------------------------- */
-
-/* Header Mobile */
-
-.bb-mobile-header-bar {
-	display:         flex;
-	justify-content: space-between;
-}
-
-.bb-mobile-header-bar .bb-logo-wrapper {
-	padding:  10px;
-}
-
-.bb-mobile-header-bar .shiftnav-toggle-button:hover,
-.bb-mobile-header-bar .shiftnav-toggle-button {
-	padding:    15px 20px;
-	background: transparent;
-}
-
-.bb-mobile-header-bar .custom-logo {
-	max-height: 28px;
-	width:      auto;
-	height:     auto;
-}
-
-@media screen and (min-width: 769px) {
-	.bb-mobile-header-bar {
-		display: none;
-	}
-}
-
-/* -------------------------------------------------------------------------- */
-
-/* Header Desktop */
-
-.bb-desktop-header-bar {
-	display: none;
-}
-
-@media screen and (min-width: 769px) {
-	.bb-desktop-header-bar {
-		display:         flex;
-		justify-content: space-between;
-		padding-top:     16px;
-		padding-bottom:  16px;
-		padding-left:    35px;
-		padding-right:   35px;
-	}
-}
-
-/* -------------------------------------------------------------------------- */
-
 /* Content */
 
-.site-content {
+.bb-main {
 	background-color:      #c4c4c4;
 	background-image:      url(https://staging1.benbakermembers.com/wp-content/uploads/2019/06/purty-wood.png);
 	background-repeat:     repeat;
 	background-attachment: fixed;
 }
 
-.widget-area {
+.bb-main {
+	width: 100%;
+}
+
+.bb-main .widget-area {
 	padding-bottom: 0px !important;
 }
 
 @media screen and (min-width: 769px) {
-	.site-content {
+	.bb-main-left {
 		width:       80%;
 		margin-left: 20%;
 	}
 
-	.widget-area,
-	.content-area {
-		margin-top:   30px !important;
+	.bb-main .widget-area,
+	.bb-main .content-area {
+		margin-top:    30px !important;
 		margin-bottom: 30px !important;
 	}
 }
@@ -213,7 +195,7 @@ body {
 /* Footer */
 
 @media screen and (min-width: 769px) {
-	.site-footer {
+	.bb-footer {
 		width:       80%;
 		margin-left: 20%;
 	}
@@ -221,19 +203,19 @@ body {
 
 /* -------------------------------------------------------------------------- */
 
-/* Sidepanel */
+/* Sidebar */
 
-.bb-sidepanel {
+.bb-sidebar {
 	display: none;
 }
 
 @media screen and (min-width: 769px) {
-	.bb-sidepanel {
+	.bb-sidebar {
 		display: block;
 
 		position:   fixed;
 		overflow-y: scroll;
-		top:        112px;
+		top:        119px;
 		bottom:     0;
 
 		width:      20%;
@@ -246,36 +228,12 @@ body {
 
 /* -------------------------------------------------------------------------- */
 
-/* Sidepanel Menu */
-
-.menu-style-container .menu,
-.menu-style-container .sub-menu {
-	list-style: none;
-	margin:     0;
-}
-
-.menu-style-container a {
-	display:       block;
-	color:         #eee;
-	border-bottom: 1px solid #111;
-	border-top:    1px solid #313131;
-	text-shadow:   0 1px 1px rgba(0,0,0,.5);
-	padding:       15px;
-	background:    #1D1D20;
-}
-
-.menu-style-container a:hover {
-	color: #f1f1f1;
-}
-
-/* -------------------------------------------------------------------------- */
-
-/* Sidenav */
+/* Slidebar */
 
 /* @link https://www.w3schools.com/howto/howto_js_sidenav.asp */
 
-/* The side navigation menu */
-.sidenav {
+/* The slidebar */
+.bb-slidebar {
 	height:           100%; /* 100% Full-height */
 	width:            0; /* 0 width - change this with JavaScript */
 	position:         fixed; /* Stay in place */
@@ -287,45 +245,73 @@ body {
 	transition:       0.3s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
-.sidenav-left {
+.bb-slidebar-left {
 	left: 0;
 }
 
-.sidenav-right {
+.bb-slidebar-right {
 	right: 0;
 }
 
 /* Position and style the close button (top right corner) */
-.sidenav .closebtn {
+.bb-slidebar .bb-closebtn {
 	position:    absolute;
 	top:         0;
 	font-size:   36px;
 	padding:     0 12px;
 	line-height: 1;
+	color:       #fff;
 }
 
-.sidenav .closebtn-left {
+.bb-slidebar .bb-closebtn:hover {
+	color: #f5f5f5;
+}
+
+.bb-slidebar .bb-closebtn-left {
 	right: 0;
 }
 
-.sidenav .closebtn-right {
+.bb-slidebar .bb-closebtn-right {
 	left: 0;
 }
 
-.openbtn {
+.bb-openbtn {
 	color:       #fff;
-	padding:     15px 20px;
 	line-height: 1;
 	cursor:      pointer;
 }
 
 /* -------------------------------------------------------------------------- */
 
-/* Dropdown */
+/* Menu - Vertical*/
+
+.bb-menu-vertical-container .bb-menu-vertical,
+.bb-menu-vertical-container .sub-menu {
+	list-style: none;
+	margin:     0;
+}
+
+.bb-menu-vertical-container a {
+	display:       block;
+	color:         #eee;
+	border-bottom: 1px solid #111;
+	border-top:    1px solid #313131;
+	text-shadow:   0 1px 1px rgba(0,0,0,.5);
+	padding:       15px;
+	background:    #1D1D20;
+}
+
+.bb-menu-vertical-container a:hover {
+	color: #f1f1f1;
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* Menu - Dropdown */
 /* @link https://www.w3schools.com/howto/howto_css_dropdown.asp
 
 /* Style The Dropdown Button */
-#menu-profile > .menu-item-has-children > a {
+.bb-menu-dropdown > .menu-item-has-children > a {
 	/*	background-color: #4CAF50;*/
 	color:            white;
 	padding:          16px;
@@ -335,20 +321,20 @@ body {
 }
 
 /* The container <div> - needed to position the dropdown content */
-.menu-profile-container {
+.bb-menu-dropdown-container {
 	position: relative;
 	display: inline-block;
 
 	align-self: center!important;
 }
 
-.menu-profile-container ul {
+.bb-menu-dropdown-container ul {
 	margin: 0;
 	list-style: none;
 }
 
 /* Dropdown Content (Hidden by Default) */
-#menu-profile .sub-menu {
+.bb-menu-dropdown .sub-menu {
 	display:          none;
 	position:         absolute;
 	background-color: #f9f9f9;
@@ -360,7 +346,7 @@ body {
 }
 
 /* Links inside the dropdown */
-#menu-profile .sub-menu a {
+.bb-menu-dropdown .sub-menu a {
 	color:           black;
 	padding:         12px  16px;
 	text-decoration: none;
@@ -368,17 +354,17 @@ body {
 }
 
 /* Change color of dropdown links on hover */
-#menu-profile .sub-menu a:hover {
+.bb-menu-dropdown .sub-menu a:hover {
 	background-color: #f1f1f1;
 }
 
 /* Show the dropdown menu on hover */
-.menu-profile-container:hover #menu-profile .sub-menu {
+.bb-menu-dropdown-container:hover .bb-menu-dropdown .sub-menu {
 	display: block;
 }
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.menu-profile-container:hover #menu-profile > .menu-item-has-children > a {
+.bb-menu-dropdown-container:hover .bb-menu-dropdown > .menu-item-has-children > a {
 	/*	background-color: #3e8e41;*/
 }
 
@@ -396,6 +382,8 @@ body {
 		border-radius: 50%;
 	}
 }
+
+/* -------------------------------------------------------------------------- */
 
 
 

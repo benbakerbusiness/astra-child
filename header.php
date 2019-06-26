@@ -31,76 +31,88 @@
             <?php echo esc_html( astra_default_strings( 'string-header-skip-link', false ) ); ?>
         </a>
 
-        <div id="header" class="bb-header">
-            <div class="bb-desktop-header-bar">
-                <?php astra_logo();?>
-                <?php if ( has_nav_menu( 'profile' ) ) : ?>
-                    <?php wp_nav_menu(array('theme_location' => 'profile'));?>
-                <?php endif; ?>
-            </div>
-
-            <div class="bb-mobile-header-bar">
-
-                <?php if ( has_nav_menu( 'sidepanel' ) ) : ?>
-                    <div id="mySidenavLeft" class="sidenav sidenav-left">
-                        <a href="javascript:void(0)" class="closebtn closebtn-left" onclick="closeNavLeft()">
-                            &times;
-                        </a>
-                        <?php
-                            wp_nav_menu(
-                                array(
-                                    'theme_location'  => 'sidepanel',
-                                    'container_class' => 'menu-style-container'
-                                )
-                            );
-                        ?>
-                    </div>
-                    <span class="openbtn" onclick="openNavLeft()">
-                        &#9776;
-                    </span>
-                <?php else: ?>
-                    <span></span>
-                <?php endif; ?>
-
-                <div class="bb-logo-wrapper">
+        <div class="bb-header">
+            <div id="header" class="bb-topbar">
+                <div class="bb-topbar-desktop">
                     <?php astra_logo();?>
-                </div>
-
-                <?php if ( has_nav_menu( 'profile' ) ) : ?>
-                    <div id="mySidenavRight" class="sidenav sidenav-right">
-                        <a href="javascript:void(0)" class="closebtn closebtn-right" onclick="closeNavRight()">
-                            &times;
-                        </a>
-                        <?php
+                    <?php
+                        if ( has_nav_menu( 'bb-primary' ) ) {
                             wp_nav_menu(
                                 array(
-                                    'theme_location'  => 'profile',
-                                    'container_class' => 'menu-style-container'
+                                    'container_class' => 'bb-menu-dropdown-container',
+                                    'menu_class'      => 'menu bb-menu-dropdown',
+                                    'theme_location'  => 'bb-primary'
                                 )
                             );
-                        ?>
-                    </div>
-                    <span class="openbtn" onclick="openNavRight()">
-                        &#9776;
-                    </span>
-                <?php else: ?>
-                    <span></span>
-                <?php endif; ?>
+                        }
+                    ?>
+                </div><!-- /bb-topbar-desktop -->
 
-            </div><!-- /bb-mobile-header-bar -->
+                <div class="bb-topbar-mobile">
 
-            <div class="bb-breadcrumbs-bar">
+                    <?php if ( has_nav_menu( 'bb-secondary' ) ) : ?>
+                        <div id="mySidenavLeft" class="bb-slidebar bb-slidebar-left">
+                            <a href="javascript:void(0)" class="bb-closebtn bb-closebtn-left" onclick="closeNavLeft()">
+                                &times;
+                            </a>
+                            <?php
+                                wp_nav_menu(
+                                    array(
+                                        'container_class' => 'bb-menu-vertical-container',
+                                        'menu_class'      => 'menu bb-menu-vertical',
+                                        'theme_location'  => 'bb-secondary'
+                                    )
+                                );
+                            ?>
+                        </div>
+                        <span class="bb-openbtn" onclick="openNavLeft()">
+                            &#9776;
+                        </span>
+                    <?php else: ?>
+                        <span></span>
+                    <?php endif; ?>
+
+                    <?php astra_logo();?>
+
+                    <?php if ( has_nav_menu( 'bb-primary' ) ) : ?>
+                        <div id="mySidenavRight" class="bb-slidebar bb-slidebar-right">
+                            <a href="javascript:void(0)" class="bb-closebtn bb-closebtn-right" onclick="closeNavRight()">
+                                &times;
+                            </a>
+                            <?php
+                                wp_nav_menu(
+                                    array(
+                                        'container_class' => 'bb-menu-vertical-container',
+                                        'menu_class'      => 'menu bb-menu-vertical',
+                                        'theme_location'  => 'bb-primary'
+                                    )
+                                );
+                            ?>
+                        </div>
+                        <span class="bb-openbtn" onclick="openNavRight()">
+                            &#9776;
+                        </span>
+                    <?php else: ?>
+                        <span></span>
+                    <?php endif; ?>
+
+                </div><!-- /bb-topbar-mobile -->
+            </div><!-- /bb-topbar -->
+
+            <div class="bb-topbar-breadcrumbs">
                 <?php bb_breadcrumbs(); ?>
             </div>
-        </div>
 
-        <div id="sidenav" class="bb-sidepanel">
+        </div> <!-- /bb-header -->
+
+        <div id="sidebar" class="bb-sidebar">
             <?php
-                if ( has_nav_menu( 'sidepanel' ) ) {
+                if ( has_nav_menu( 'bb-secondary' ) ) {
                     wp_nav_menu(
                         array(
-                            'theme_location'  => 'sidepanel',
-                            'container_class' => 'menu-style-container'
+                            'container_class' => 'bb-menu-vertical-container',
+                            'menu_class'      => 'menu bb-menu-vertical',
+                            'theme_location'  => 'bb-secondary'
                         )
                     );
                 }
@@ -109,7 +121,7 @@
 
         <?php astra_content_before(); ?>
 
-        <div id="content" class="site-content">
+        <div id="content" class="site-content bb-main bb-main-left">
 
             <div class="ast-container">
 

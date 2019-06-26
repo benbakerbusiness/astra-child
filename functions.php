@@ -38,37 +38,13 @@ function bb_register_nav_menus()
 {
 	register_nav_menus(
 		array(
-			'sidepanel' => __('Sidepanel'),
-			'profile'   => __('Profile')
+			'bb-primary'    => __('Primary'),
+			'bb-secondary'  => __('Secondary')
 		)
 	);
 }
 
 add_action('init', 'bb_register_nav_menus');
-
-/**
- * Menu Sidepanel
- */
-function bb_menu_sidepanel()
-{
-	wp_nav_menu(
-		array(
-			'theme_location' => 'sidepanel'
-		)
-	);
-}
-
-/**
- * Menu Primary
- */
-function bb_menu_primary()
-{
-	wp_nav_menu(
-		array(
-			'theme_location' => 'profile'
-		)
-	);
-}
 
 /**
  * Breadcrumbs
