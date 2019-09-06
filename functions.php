@@ -47,24 +47,6 @@ function bb_register_nav_menus()
 add_action('init', 'bb_register_nav_menus');
 
 /**
- * Breadcrumbs
- */
-function bb_breadcrumbs()
-{
-    if(is_user_logged_in())
-    {
-    	if (is_front_page())
-    	{
-    		echo 'Home';
-    	}
-    	else
-    	{
-    		echo do_shortcode('[uo_breadcrumbs]');
-    	}
-    }
-}
-
-/**
  * #user_email#
  */
 add_filter('wp_nav_menu_objects', 'my_dynamic_menu_items');

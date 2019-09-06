@@ -99,8 +99,14 @@
                 </div><!-- /bb-topbar-mobile -->
             </div><!-- /bb-topbar -->
 
-            <div class="bb-topbar-breadcrumbs">
-                <?php bb_breadcrumbs(); ?>
+            <div class="bb-topbar-title">
+                <span class="font-bold">
+                    <?php bloginfo('name'); ?>
+                </span>
+                –
+                <span class="font-italic">
+                    <?php bloginfo('description'); ?>
+                </span>
             </div>
 
         </div> <!-- /bb-header -->
