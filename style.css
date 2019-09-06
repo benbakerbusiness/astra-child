@@ -147,15 +147,22 @@ body {
 
 /* -------------------------------------------------------------------------- */
 
-/* Breadcrumbs */
+/* Title bar */
 
 .bb-topbar-title {
+	text-align: center;
 	background-color: #ff8b00;
 	white-space:      nowrap;
-	padding-left:     10px;
-	padding-right:    10px;
+	padding-left:     15px;
+	padding-right:    15px;
 	overflow-x:       scroll;
 	overflow-y:       hidden;
+}
+
+@media screen and (min-width: 769px) {
+	.bb-topbar-title {
+		text-align: left;
+	}
 }
 
 /* -------------------------------------------------------------------------- */
@@ -395,7 +402,14 @@ body {
 	font-weight: bold;
 }
 
+/* -------------------------------------------------------------------------- */
 
+/* Comments */
+
+.comments-area {
+	background-color: white;
+	padding: 5.34em 6.67em;
+}
 
 
 
