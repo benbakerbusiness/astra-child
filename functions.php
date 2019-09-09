@@ -68,6 +68,13 @@ function my_dynamic_menu_items($menu_items)
 }
 
 /**
+ * Home Link
+ */
+function bb_home_url() {
+    echo home_url();
+}
+
+/**
  * Logo
  */
 function bb_logo() {

@@ -34,7 +34,7 @@
         <div class="bb-header">
             <div id="header" class="bb-topbar">
                 <div class="bb-topbar-desktop">
-                    <a href="<?php home_url(); ?>">
+                    <a href="<?php bb_home_url(); ?>">
                         <img class="bb-logo" src="<?php bb_logo(); ?>">
                     </a>
                     <?php
