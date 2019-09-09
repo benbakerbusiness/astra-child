@@ -66,3 +66,22 @@ function my_dynamic_menu_items($menu_items)
 
     return $menu_items;
 }
+
+/**
+ * Logo
+ */
+function bb_logo() {
+    echo get_stylesheet_directory_uri() . "/images/logo.png";
+}
+
+/**
+ * Login
+ */
+function my_login_stylesheet() {
+    wp_enqueue_style( 'custom-login', get_stylesheet_directory_uri() . '/style-login.css' );
+}
+add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
+
+
+
+

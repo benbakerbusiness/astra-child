@@ -34,7 +34,7 @@
         <div class="bb-header">
             <div id="header" class="bb-topbar">
                 <div class="bb-topbar-desktop">
-                    <?php astra_logo();?>
+                    <img class="bb-logo" src="<?php bb_logo(); ?>">
                     <?php
                         if ( has_nav_menu( 'bb-primary' ) ) {
                             wp_nav_menu(
