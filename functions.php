@@ -89,6 +89,15 @@ function my_login_stylesheet() {
 }
 add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
 
+/**
+ * Title
+ */
+function bb_admin_title()
+{
+    $title = "Log in &lsaquo; " . get_bloginfo('name') . " | Ben Baker Coaching";
+    return $title;
+}
+add_filter('login_title', 'bb_admin_title', 10, 2);
 
 
 
